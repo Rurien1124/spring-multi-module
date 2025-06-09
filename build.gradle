@@ -1,19 +1,46 @@
 plugins {
 	id 'java'
+	id 'org.springframework.boot' version '3.4.6'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id "io.freefair.lombok" version '8.11'
 }
 
-group = 'com.multimodule'
-version = '1.0-SNAPSHOT'
+version = '1.0.0'
 
-repositories {
-	mavenCentral()
-}
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.freefair.lombok'
 
-dependencies {
-	testImplementation platform('org.junit:junit-bom:5.10.0')
-	testImplementation 'org.junit.jupiter:junit-jupiter'
-}
+	group = 'com.multimodule'
 
-test {
-	useJUnitPlatform()
+	ext {
+		defaultCharset = "UTF-8"
+	}
+
+	java {
+		sourceCompatibility = JavaVersion.VERSION_21
+		targetCompatibility = JavaVersion.VERSION_21
+	}
+
+	compileJava.options.encoding = defaultCharset
+	compileTestJava.options.encoding = defaultCharset
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		testImplementation platform('org.junit:junit-bom:5.10.0')
+		testImplementation 'org.junit.jupiter:junit-jupiter'
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+
+	jar {
+		enabled = false
+		dependsOn(test)
+	}
 }
