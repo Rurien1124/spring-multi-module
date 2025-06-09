@@ -13,20 +13,17 @@ H2 (MS-SQL)
 - 관리자/사용자 웹의 공통된 부분과 다른 부분을 모듈로 분리
 ```text
 project-root/
-├── common/
+├── core/                # 핵심 기능 정의
+├── domain/              # Service, Repository, Domain 정의
+├── common/              # 공통 Type, Util 정의
+├── admin/               # 관리자 웹, API 정의
 │   └── src/main/resources/
 │       ├── templates/
-│       │   └── common/  # 공통 템플릿
 │       └── static/
-│           └── common/  # 공통 정적 리소스
-├── admin/
-│   └── src/main/resources/
-│       ├── templates/   # 관리자용 템플릿
-│       └── static/      # 관리자용 정적 리소스
-└── user/
-	└── src/main/resources/
-	├── templates/   # 사용자용 템플릿
-	└── static/      # 사용자용 정적 리소스
+└── user/                # 사용자 웹, API 정의
+    └── src/main/resources/
+        ├── templates/
+        └── static/
 ```
 
 - jar 빌드 시 예상 결과
