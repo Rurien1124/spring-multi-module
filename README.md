@@ -29,10 +29,14 @@ project-root/
 - jar 빌드 시 예상 결과
 ```text
 1. 관리자 웹 모듈
-  - common
-  - admin
+  - module-common
+  - module-domain
+  - module-common
+  - module-admin-web
 
 2. 사용자 웹 모듈
-  - common
-  - user
+  - module-common
+  - module-domain
+  - module-common
+  - module-user-web
 ```
