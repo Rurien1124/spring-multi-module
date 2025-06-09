@@ -1,3 +1,10 @@
-jar {
+dependencies {
+	implementation project(':module-common')
+	implementation project(':module-core')
+	implementation project(':module-domain')
+}
+
+bootJar {
+	archiveFileName = 'admin-web.jar'
 	enabled = true
 }
