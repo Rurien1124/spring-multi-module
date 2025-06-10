@@ -1,0 +1,27 @@
+# 의존성 버전 관리
+[versions]
+spring-boot = "3.4.6"
+
+h2 = "2.2.224"
+querydsl = "5.1.0"
+
+lombok = "8.12"
+junit = "5.10.0"
+
+[libraries]
+springboot-main = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring-boot" }
+springboot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
+springboot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot" }
+springboot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot" }
+
+springboot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
+
+h2 = { module = "com.h2database:h2", version.ref = "h2" }
+querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl" }
+querydsl-apt = { module = "com.querydsl:querydsl-apt", version.ref = "querydsl" }
+
+lombok-lib = { module = "io.freefair:lombok", version.ref = "lombok" }
+
+junit-main = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
