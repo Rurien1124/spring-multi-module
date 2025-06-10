@@ -7,6 +7,7 @@ querydsl = "5.1.0"
 
 lombok = "8.12"
 junit = "5.10.0"
+assertj = "3.25.1"
 
 [libraries]
 springboot-main = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring-boot" }
@@ -25,3 +26,5 @@ lombok-lib = { module = "io.freefair:lombok", version.ref = "lombok" }
 junit-main = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }

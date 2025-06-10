@@ -1,7 +1,5 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.4.6"
-	id("io.spring.dependency-management") version "1.1.7"
 	id("io.freefair.lombok") version "8.12"
 }
 
@@ -10,8 +8,6 @@ version = "0.0.0.1"
 allprojects {
 	apply(plugin = "java")
 	apply(plugin = "io.freefair.lombok")
-	apply(plugin = "org.springframework.boot")
-	apply(plugin = "io.spring.dependency-management")
 
 	group = "com.multimodule"
 
@@ -42,13 +38,10 @@ allprojects {
 		testImplementation(libs.junit.main)
 		testImplementation(libs.junit.api)
 		testImplementation(libs.junit.engine)
+		testImplementation(libs.assertj.core)
 	}
 
 	tasks.jar {
-		enabled = false
-	}
-
-	tasks.bootJar {
 		enabled = false
 	}
 

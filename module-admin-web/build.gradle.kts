@@ -1,3 +1,8 @@
+plugins {
+	id("org.springframework.boot") version "3.4.6"
+	id("io.spring.dependency-management") version "1.1.7"
+}
+
 dependencies {
 	implementation(project(":module-common"))
 	implementation(project(":module-core"))
@@ -14,6 +19,6 @@ tasks.bootJar {
 		":module-common:test",
 		":module-core:test",
 		":module-domain:test"
-	);
+	)
 	dependsOn(tasks.test, testModules)
 }
