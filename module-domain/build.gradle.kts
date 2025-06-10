@@ -1,4 +1,4 @@
-jar {
-	archiveFileName = 'module-domain.jar'
+tasks.jar {
 	enabled = true
+	dependsOn(tasks.test)
 }

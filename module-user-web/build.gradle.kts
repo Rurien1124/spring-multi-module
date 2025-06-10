@@ -1,15 +1,19 @@
-plugins {
-	id 'org.springframework.boot'
-	id 'io.spring.dependency-management'
-}
-
 dependencies {
-	implementation project(':module-common')
-	implementation project(':module-core')
-	implementation project(':module-domain')
+	implementation(project(":module-common"))
+	implementation(project(":module-core"))
+	implementation(project(":module-domain"))
+
+	implementation(rootProject.libs.springboot.main)
+	implementation(rootProject.libs.springboot.web)
+	implementation(rootProject.libs.springboot.validation)
 }
 
-bootJar {
-	archiveFileName = 'user-web.jar'
+tasks.bootJar {
 	enabled = true
+	val testModules = listOf(
+		":module-common:test",
+		":module-core:test",
+		":module-domain:test"
+	);
+	dependsOn(tasks.test, testModules)
 }

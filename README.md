@@ -4,7 +4,7 @@
 ```text
 Java 21
 Spring boot 3.4.1
-Gradle
+Gradle (Kotlin)
 Yaml
 Thymeleaf
 H2 (MS-SQL)

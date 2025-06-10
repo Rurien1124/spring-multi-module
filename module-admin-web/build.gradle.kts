@@ -1,10 +1,19 @@
 dependencies {
-	implementation project(':module-common')
-	implementation project(':module-core')
-	implementation project(':module-domain')
+	implementation(project(":module-common"))
+	implementation(project(":module-core"))
+	implementation(project(":module-domain"))
+
+	implementation(rootProject.libs.springboot.main)
+	implementation(rootProject.libs.springboot.web)
+	implementation(rootProject.libs.springboot.validation)
 }
 
-//bootJar {
-//	archiveFileName = 'admin-web.jar'
-//	enabled = true
-//}
+tasks.bootJar {
+	enabled = true
+	val testModules = listOf(
+		":module-common:test",
+		":module-core:test",
+		":module-domain:test"
+	);
+	dependsOn(tasks.test, testModules)
+}
