@@ -4,7 +4,7 @@ dependencies {
 	implementation project(':module-domain')
 }
 
-bootJar {
-	archiveFileName = 'admin-web.jar'
-	enabled = true
-}
+//bootJar {
+//	archiveFileName = 'admin-web.jar'
+//	enabled = true
+//}

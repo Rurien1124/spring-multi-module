@@ -2,15 +2,14 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.6'
 	id 'io.spring.dependency-management' version '1.1.7'
-	id "io.freefair.lombok" version '8.11'
 }
 
 version = '1.0.0'
 
-allprojects {
+allprojects {Project project ->
 	apply plugin: 'java'
 	apply plugin: 'org.springframework.boot'
-	apply plugin: 'io.freefair.lombok'
+	apply plugin: 'io.spring.dependency-management'
 
 	group = 'com.multimodule'
 
@@ -31,13 +30,11 @@ allprojects {
 	}
 
 	dependencies {
-		implementation 'org.springframework.boot:spring-boot-starter-web'
-		implementation 'org.springframework.boot:spring-boot-starter-validation'
-
-		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-		testImplementation platform('org.junit:junit-bom:5.10.0')
-		testImplementation 'org.junit.jupiter:junit-jupiter'
+		implementation(libs.springboot.main)
+		implementation(libs.springboot.web)
+		implementation(libs.springboot.validation)
+		implementation(libs.springboot.test)
+		implementation(libs.spring.dependency)
 	}
 
 	test {
@@ -45,6 +42,11 @@ allprojects {
 	}
 
 	jar {
+		enabled = false
+		dependsOn(test)
+	}
+
+	bootJar {
 		enabled = false
 		dependsOn(test)
 	}
