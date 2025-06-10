@@ -42,6 +42,7 @@ allprojects {
 		testImplementation(libs.junit.main)
 		testImplementation(libs.junit.api)
 		testImplementation(libs.junit.engine)
+		testImplementation(libs.assertj.core)
 	}
 
 	tasks.jar {
