@@ -14,7 +14,7 @@ H2 (MS-SQL)
 ```text
 project-root/
 ├── module-core/                # 핵심 설정, 기능 정의
-├── module-domain/              # Service, Repository, Domain 정의
+├── module-domain/              # Service, Repository, Domain 정의 (추후 다중 DB 연결 고려 필요, domain 분리)
 ├── module-common/              # 공통 Type, Util 정의
 ├── module-admin-web/           # 관리자 웹, API 정의
 │   └── src/main/resources/
