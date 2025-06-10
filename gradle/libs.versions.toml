@@ -38,3 +38,5 @@ assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
 springboot-core = ["springboot-main", "springboot-test"]
 springboot-web = ["springboot-web", "springboot-validation"]
 springboot-domain = ["springboot-data-jpa"]
+
+junit-test = ["junit-main", "junit-api", "junit-engine", "assertj-core"]
