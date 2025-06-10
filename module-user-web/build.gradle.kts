@@ -1,6 +1,6 @@
 plugins {
-	id("org.springframework.boot") version "3.4.6"
-	id("io.spring.dependency-management") version "1.1.7"
+	alias(libs.plugins.spring.boot)
+	alias(libs.plugins.spring.dependency)
 }
 
 dependencies {
@@ -8,9 +8,8 @@ dependencies {
 	implementation(project(":module-core"))
 	implementation(project(":module-domain"))
 
-	implementation(rootProject.libs.springboot.main)
-	implementation(rootProject.libs.springboot.web)
-	implementation(rootProject.libs.springboot.validation)
+	implementation(rootProject.libs.bundles.springboot.core)
+	implementation(rootProject.libs.bundles.springboot.web)
 }
 
 tasks.bootJar {

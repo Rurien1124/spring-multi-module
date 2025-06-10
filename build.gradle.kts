@@ -1,13 +1,14 @@
 plugins {
 	java
-	id("io.freefair.lombok") version "8.12"
+	alias(libs.plugins.spring.dependency) apply false
+	alias(libs.plugins.lombok.main)
 }
 
 version = "0.0.0.1"
 
 allprojects {
 	apply(plugin = "java")
-	apply(plugin = "io.freefair.lombok")
+	apply(plugin = rootProject.libs.plugins.lombok.main.get().pluginId)
 
 	group = "com.multimodule"
 
@@ -35,10 +36,7 @@ allprojects {
 	val libs = rootProject.libs
 
 	dependencies {
-		testImplementation(libs.junit.main)
-		testImplementation(libs.junit.api)
-		testImplementation(libs.junit.engine)
-		testImplementation(libs.assertj.core)
+		testImplementation(libs.bundles.junit.test)
 	}
 
 	tasks.jar {

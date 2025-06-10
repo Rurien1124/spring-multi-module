@@ -1,5 +1,6 @@
 # 의존성 버전 관리
 [versions]
+spring-dependency = "1.1.7"
 spring-boot = "3.4.6"
 
 h2 = "2.2.224"
@@ -8,6 +9,12 @@ querydsl = "5.1.0"
 lombok = "8.12"
 junit = "5.10.0"
 assertj = "3.25.1"
+
+[plugins]
+spring-dependency = { id = "io.spring.dependency-management", version.ref = "spring-dependency" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+
+lombok-main = { id = "io.freefair.lombok", version.ref = "lombok" }
 
 [libraries]
 springboot-main = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring-boot" }
@@ -21,10 +28,15 @@ h2 = { module = "com.h2database:h2", version.ref = "h2" }
 querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl" }
 querydsl-apt = { module = "com.querydsl:querydsl-apt", version.ref = "querydsl" }
 
-lombok-lib = { module = "io.freefair:lombok", version.ref = "lombok" }
-
 junit-main = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
 
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+
+[bundles]
+springboot-core = ["springboot-main", "springboot-test"]
+springboot-web = ["springboot-web", "springboot-validation"]
+springboot-domain = ["springboot-data-jpa"]
+
+junit-test = ["junit-main", "junit-api", "junit-engine", "assertj-core"]
