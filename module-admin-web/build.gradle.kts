@@ -8,9 +8,8 @@ dependencies {
 	implementation(project(":module-core"))
 	implementation(project(":module-domain"))
 
-	implementation(rootProject.libs.springboot.main)
-	implementation(rootProject.libs.springboot.web)
-	implementation(rootProject.libs.springboot.validation)
+	implementation(rootProject.libs.bundles.springboot.core)
+	implementation(rootProject.libs.bundles.springboot.web)
 }
 
 tasks.bootJar {
