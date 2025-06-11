@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.multimodule.admin.common.constant.Pages;
+
 import lombok.extern.slf4j.Slf4j;
 
 /** 페이지용 예외 핸들러 */
@@ -17,7 +19,6 @@ public class GlobalExceptionHandler {
 		public String handleUnexcpectedException( Exception e ) {
 				log.error( "처리되지 않은 예외가 발생하였습니다.", e );
 
-				// TODO: 5xx 오류 페이지 응답 추가
-				return "internal_server_error";
+				return Pages.INTERNAL_SERVER_ERROR;
 		}
 }
