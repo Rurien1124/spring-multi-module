@@ -1,0 +1,23 @@
+spring:
+    thymeleaf:
+        enabled: true
+        prefix: classpath:/templates/
+        suffix: .html
+        encoding: UTF-8
+        mode: HTML
+
+---
+spring:
+    config:
+        activate:
+            on-profile: thymeleaf-cache-enabled
+    thymeleaf:
+        cache: true
+
+---
+spring:
+    config:
+        activate:
+            on-profile: thymeleaf-cache-disabled
+    thymeleaf:
+        cache: false
