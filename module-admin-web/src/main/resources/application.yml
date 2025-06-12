@@ -1,33 +1,15 @@
 spring:
     application:
         name: admin-web
+
     config:
         import:
+            - classpath:config/application-logging.yml
+            - classpath:config/application-profiles.yml
             - classpath:config/application-server.yml
             - classpath:config/application-thymeleaf.yml
-    web:
-        resources:
-            chain:
-                enabled: true
-                strategy:
-                    content:
-                        enabled: true
-                        paths: /**
-            cache:
-                cachecontrol:
-                    max-age: 1d
-                    cache-public: true
-                    no-cache: false
-                    no-store: false
+            - classpath:config/application-web.yml
 
-    profiles:
-        group:
-            'local':
-                - local-server
-                - thymeleaf-cache-disabled
-            'test':
-                - local-server
-                - thymeleaf-cache-disabled
-            'dev':
-                - dev-server
-                - thymeleaf-cache-enabled
+logging:
+    file:
+        name: admin-web

@@ -1,0 +1,18 @@
+spring:
+    profiles:
+        group:
+            'local':
+                - local-server
+                - debug-logging
+                - database-logging
+                - thymeleaf-cache-disabled
+            'test':
+                - local-server
+                - debug-logging
+                - database-logging
+                - thymeleaf-cache-disabled
+            'dev':
+                - dev-server
+                - info-logging
+                - database-logging
+                - thymeleaf-cache-enabled

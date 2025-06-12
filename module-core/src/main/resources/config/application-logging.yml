@@ -3,8 +3,6 @@ logging:
     charset:
         console: UTF-8
         file: UTF-8
-    file:
-        name: admin-web
     pattern:
         console: '[%d{HH:mm:ss.SSS}][%highlight(%-5level)][%-30thread{30}][%-60logger{60}:%-4L][%X{traceId}-%X{spanId}] - %m%n'
         file: '[%d][%-5level][%t][%-10logger{10}:%L][%X{traceId}-%X{spanId}] - %m%n'
