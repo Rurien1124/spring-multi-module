@@ -14,6 +14,9 @@ dependencies {
 
 tasks.bootJar {
 	enabled = true
+
+	mainClass = "com.multimodule.user.Main"
+
 	val testModules = listOf(
 		":module-common:test",
 		":module-core:test",
