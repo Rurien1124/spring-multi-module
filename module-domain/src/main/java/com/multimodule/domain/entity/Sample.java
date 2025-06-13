@@ -16,7 +16,7 @@ import lombok.experimental.FieldNameConstants;
 import lombok.experimental.SuperBuilder;
 
 @FieldNameConstants
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder(toBuilder = true)
@@ -30,4 +30,16 @@ public class Sample extends BaseEntityWithSequence {
   @Comment("데이터")
   @Column(length = 1000, nullable = false)
   String data;
+
+  public static Sample empty() {
+    return new NullSample();
+  }
+
+  private static class NullSample extends Sample {
+
+    private NullSample() {
+      super.seq = 0L;
+      this.data = "";
+    }
+  }
 }
