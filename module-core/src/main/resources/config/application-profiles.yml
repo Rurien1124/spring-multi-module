@@ -3,16 +3,19 @@ spring:
         group:
             'local':
                 - local-server
+                - local-database
                 - debug-logging
                 - database-logging
                 - thymeleaf-cache-disabled
             'test':
                 - local-server
+                - test-database
                 - debug-logging
                 - database-logging
                 - thymeleaf-cache-disabled
             'dev':
                 - dev-server
+                - dev-database
                 - info-logging
                 - database-logging
                 - thymeleaf-cache-enabled

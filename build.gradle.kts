@@ -46,7 +46,6 @@ allprojects {
 	tasks.withType<JavaCompile> {
 		val defaultCharset = "UTF-8"
 		options.encoding = defaultCharset
-		options.compilerArgs.add("-parameters")
 	}
 
 	tasks.withType<Test> {

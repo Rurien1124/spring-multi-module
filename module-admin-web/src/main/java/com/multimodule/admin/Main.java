@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan( basePackages = { "com.multimodule.admin", "com.multimodule.core" } )
+@ComponentScan( basePackages = { "com.multimodule.admin", "com.multimodule.core", "com.multimodule.domain" } )
 @SpringBootApplication
 public class Main {
 
