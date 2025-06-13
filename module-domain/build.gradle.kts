@@ -6,6 +6,7 @@ plugins {
 dependencies {
 	implementation(rootProject.libs.bundles.springboot.core)
 	implementation(rootProject.libs.bundles.springboot.domain)
+	implementation(rootProject.libs.bundles.querydsl) { artifact { classifier = "jakarta" } }
 }
 
 tasks.jar {
