@@ -9,6 +9,7 @@ spring:
             - classpath:config/application-server.yml
             - classpath:config/application-thymeleaf.yml
             - classpath:config/application-web.yml
+            - classpath:config/application-sample-database.yml
 
 logging:
     file:
