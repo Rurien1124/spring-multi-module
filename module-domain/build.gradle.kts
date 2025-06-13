@@ -1,3 +1,5 @@
+version = "0.0.0.1"
+
 plugins {
 	alias(libs.plugins.spring.boot)
 	alias(libs.plugins.spring.dependency)
