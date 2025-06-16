@@ -20,7 +20,7 @@ public class SampleApiController {
 
 		private final SampleService sampleService;
 
-		@GetMapping("/{id}")
+		@GetMapping("/{id:\\d+}")
 		public ResponseEntity<Sample> getSample( @PathVariable long id ) {
 				var sample = sampleService.getSample( id );
 				return ResponseEntity.ok( sample );
