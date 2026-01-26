@@ -7,7 +7,7 @@ querydsl = "5.1.0"
 
 lombok = "8.12"
 junit = "5.10.0"
-assertj = "3.25.1"
+assertj = "3.27.7"
 
 [plugins]
 spring-dependency = { id = "io.spring.dependency-management", version = "1.1.7" }
